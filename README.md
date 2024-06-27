@@ -6,14 +6,14 @@ by [Olivia Artz Modular](https://github.com/oamodular).
 
 ## About this firmware
 
-The input of this module is treated as a clock source.  With each rising edge
-(crossing 1.5V), the eight outputs will generate musical clock divisions in
-powers of two (/2, /4, /8, /16, /32, /64, /128, and /256).  The input is
-required to drop below 0.5V in order to trigger the next clock pulse (i.e.
-Schmitt action).  This allows LFOs and other non-square waves to cleanly
+The input of this module is treated as a clock source.  With each positive clock
+pulse (crossing above 1.5V), the eight outputs will generate musical clock
+divisions in powers of two (/2, /4, /8, /16, /32, /64, /128, and /256).  The
+input is required to drop below 0.5V in order to trigger the next clock pulse
+(i.e. Schmitt action).  This allows LFOs and other non-square waves to cleanly
 trigger the clock divisions.
 
-A negative clock pulse (i.e. crossing below -1.5V), will reset the clock
+A negative clock pulse (crossing below -1.5V), will reset the clock
 divisions to zero.  Since the module only has a single input, this means
 clock and reset inputs will need to be mixed before being applied to the module.
 
@@ -28,7 +28,7 @@ IDE, following the instructions
 
 ## Use Cases
 
-### Clock divisions with reset
+### Clock Divisions with Reset
 
 To use as a standard clock divider with reset, attenuate the master clock signal
 to range from 0.0V to ~2.5V.  Invert the reset clock signal so that it ranges
@@ -52,3 +52,7 @@ centered above 1.0V.  Note: the closer to centering 5Vpp wave at 1.0, the more
 risk there is of accidentally triggering a reset (1.0V - 2.5V = -1.5V), so it
 is best to avoid these kinds of theoretical edge-cases.
 
+The response at high frequencies is somewhat wave-shape-dependent.  With
+unipolar square waves, the input can can slightly above the audible range
+(20kHz).  With more sloped/curved waves, instability may occur earlier
+(~10kHz).
