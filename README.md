@@ -1,7 +1,7 @@
 # uncertainty-clock-divider
 
 A musical clock divider and subharmonic generator for the eurorack module
-[Uncertainty](https://github.com/oamodular/uncertainty)
+[Uncertainty](https://oamodular.org/products/uncertainty)
 by [Olivia Artz Modular](https://github.com/oamodular).
 
 ## About this firmware
@@ -16,15 +16,6 @@ trigger the clock divisions.
 A negative clock pulse (crossing below -1.5V), will reset the clock
 divisions to zero.  Since the module only has a single input, this means
 clock and reset inputs will need to be mixed before being applied to the module.
-
-## Installing
-
-If you want to install this firmware as-is, you can download the .uf2 file and
-follow the instructions [here](https://github.com/oamodular/uncertainty?tab=readme-ov-file#how-to-reinstall-the-default-firmware).
-
-If you would like to modify the code and run it, you can do so using the Arduino
-IDE, following the instructions
-[here](https://wiki.seeedstudio.com/XIAO-RP2040-with-Arduino/).
 
 ## Use Cases
 
@@ -56,3 +47,14 @@ The response at high frequencies is somewhat wave-shape-dependent.  With
 unipolar square waves, the input can can slightly above the audible range
 (20kHz).  With more sloped/curved waves, instability may occur earlier
 (~10kHz).
+
+## Installing
+
+If you want to install this firmware as-is, you can download the .uf2 file (see
+"Releases") and follow the instructions
+[here](https://github.com/oamodular/uncertainty?tab=readme-ov-file#how-to-reinstall-the-default-firmware).
+
+If you would like to modify the code and run it, you can do so using the Arduino
+IDE, following the instructions
+[here](https://wiki.seeedstudio.com/XIAO-RP2040-with-Arduino/).
+
